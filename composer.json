@@ -18,7 +18,9 @@
     "license": [
         "GPL-2.0-or-later"
     ],
-    "minimum-stability": "dev",
+    "require": {
+        "typo3/cms-core": "^9.5.17 || ^10.4.2"
+    },    
     "autoload": {
         "psr-4": {
             "AshokaTree\\Openweather\\": "Classes"

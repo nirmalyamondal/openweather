@@ -19,7 +19,7 @@ composer require ashokatree/openweather
 ```
 OR
 ```
-composer require ashokatree/openweather 9.0.x-dev
+composer require ashokatree/openweather 10.0.x-dev
 ```
 OR
 ```
@@ -46,9 +46,9 @@ Download and install the [extension][3] with the extension manager module.
 
 ### 4.1 Versions and support
 
-| OpenWeather | TYPO3      | PHP       | Support / Development                   |
-| ----------- | ---------- | ----------|---------------------------------------- |
-| 9.x         | 9.5 - 10.x | 7.0 - 7.2 | features, bugfixes, security updates    |
+| OpenWeather | TYPO3       | PHP       | Support / Development                   |
+| ----------- | ----------- | ----------|---------------------------------------- |
+| 10.x        | 10.0 - 10.x | 7.0 - 7.2 | features, bugfixes, security updates    |
 
 ### 4.2 Changelog
 
@@ -70,5 +70,5 @@ to accept only bugfixes if we can reproduce the issue.
 [1]: https://docs.typo3.org/typo3cms/extensions/openweather/
 [2]: https://getcomposer.org/
 [3]: https://extensions.typo3.org/extension/openweather
-[4]: https://docs.typo3.org/p/georgringer/openweather/master/en-us/Misc/Changelog/Index.html
-[5]: https://semver.org/
+[4]: https://docs.typo3.org/p/ashokatree/openweather/master/en-us/Misc/Changelog/Index.html
+[5]: https://github.com/nirmalyamondal/openweather/

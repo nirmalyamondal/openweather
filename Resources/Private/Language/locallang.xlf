@@ -31,10 +31,10 @@
 				<source>OpenWeather Application Key to openweathermap.org e.g. 70cfc502d1281a333dfe6608914fc51e </source>
 			</trans-unit>
 			<trans-unit id="folder" resname="folder">
-				<source>Folder path to save JSON import file e.g fileadmin/openweathermap/</source>
+				<source>Folder path to save JSON import file e.g /fileadmin/openweathermap/</source>
 			</trans-unit>
 			<trans-unit id="file" resname="file">
-				<source>JSON import file name e.g current.json or hourly.json or daily.jso</source>
+				<source>JSON import file name e.g current.json or hourly.json or daily.json</source>
 			</trans-unit>
 			<trans-unit id="latitude" resname="latitude">
 				<source>Latitude of the place to display weather e.g 22.5016</source>

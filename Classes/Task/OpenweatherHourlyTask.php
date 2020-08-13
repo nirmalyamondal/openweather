@@ -6,6 +6,7 @@ ini_set('max_execution_time', 300);
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Resource\ResourceFactory;
+use TYPO3\CMS\Core\Core\Environment;
 
 /**
  * Class OpenweatherHourlyTask
@@ -103,12 +104,13 @@ class OpenweatherHourlyTask extends \TYPO3\CMS\Scheduler\Task\AbstractTask
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        //comment out curl_setopt when NO ssl/ https
         curl_setopt($ch, CURLOPT_SSLVERSION,3);
         $data = curl_exec($ch);
         $error = curl_error($ch); 
         curl_close($ch);
 
-        $path = PATH_site.$folder.$file;
+        $path = Environment::getPublicPath().$folder.$file;
         $fp = fopen($path, "w+");
         fputs($fp, $data);
         fclose($fp);
@@ -122,7 +124,7 @@ class OpenweatherHourlyTask extends \TYPO3\CMS\Scheduler\Task\AbstractTask
      */
     public static function parseSettings()
     {
-        $settings = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['openweather']);
+        $settings = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['EXTENSIONS']['openweather']);
         if (!is_array($settings)) {
             $settings = [];
         }
@@ -141,8 +143,8 @@ class OpenweatherHourlyTask extends \TYPO3\CMS\Scheduler\Task\AbstractTask
             $status = 3;
         }
         // write dev log if enabled
-        if (TYPO3_DLOG && $this->logging) {
-            GeneralUtility::devLog($msg, 'openweather', $status);
+        if ($this->logging) {
+            //GeneralUtility::devLog($msg, 'openweather', $status);
         }
     }
 

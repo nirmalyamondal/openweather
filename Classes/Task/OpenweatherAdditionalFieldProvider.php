@@ -3,7 +3,11 @@ namespace AshokaTree\Openweather\Task;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
+use TYPO3\CMS\Scheduler\AbstractAdditionalFieldProvider;
 use TYPO3\CMS\Core\Messaging\FlashMessage;
+use TYPO3\CMS\Core\Messaging\FlashMessageService;
+use TYPO3\CMS\Core\Core\Environment;
+use TYPO3\CMS\Scheduler\Task\Enumeration\Action;
 
 /**
  * Class OpenweatherAdditionalFieldProvider
@@ -39,11 +43,12 @@ class OpenweatherAdditionalFieldProvider implements \TYPO3\CMS\Scheduler\Additio
         $task,
         \TYPO3\CMS\Scheduler\Controller\SchedulerModuleController $schedulerModule
     ) {
+        $currentSchedulerModuleAction = $schedulerModule->getCurrentAction();
         // process fields
         if (empty($taskInfo['weather_appid'])) {
-            if ($schedulerModule->CMD == 'add') {
+            if ($currentSchedulerModuleAction->equals(Action::ADD)) {
                 $taskInfo['weather_appid'] = '70cfc502d1281a300dfe6608914fc51e';
-            } elseif ($schedulerModule->CMD == 'edit') {
+            } elseif ($currentSchedulerModuleAction->equals(Action::EDIT)) {
                 $taskInfo['weather_appid'] = $task->weather_appid;
             } else {
                 $taskInfo['weather_appid'] = '70cfc502d1281a300dfe6608914fc51e';
@@ -51,19 +56,19 @@ class OpenweatherAdditionalFieldProvider implements \TYPO3\CMS\Scheduler\Additio
         }
 
 		if (empty($taskInfo['weather_folder'])) {
-            if ($schedulerModule->CMD == 'add') {
-                $taskInfo['weather_folder'] = 'fileadmin/openweather/';
-            } elseif ($schedulerModule->CMD == 'edit') {
+            if ($currentSchedulerModuleAction->equals(Action::ADD)) {
+                $taskInfo['weather_folder'] = '/fileadmin/openweather/';
+            } elseif ($currentSchedulerModuleAction->equals(Action::EDIT)) {
                 $taskInfo['weather_folder'] = $task->weather_folder;
             } else {
-                $taskInfo['weather_folder'] = 'fileadmin/openweather/';
+                $taskInfo['weather_folder'] = '/fileadmin/openweather/';
             }
         }
 
 		if (empty($taskInfo['weather_file'])) {
-            if ($schedulerModule->CMD == 'add') {
+            if ($currentSchedulerModuleAction->equals(Action::ADD)) {
                 $taskInfo['weather_file'] = 'hourly.json';
-            } elseif ($schedulerModule->CMD == 'edit') {
+            } elseif ($currentSchedulerModuleAction->equals(Action::EDIT)) {
                 $taskInfo['weather_file'] = $task->weather_file;
             } else {
                 $taskInfo['weather_file'] = 'hourly.json';
@@ -71,9 +76,9 @@ class OpenweatherAdditionalFieldProvider implements \TYPO3\CMS\Scheduler\Additio
         }
 
         if (empty($taskInfo['weather_latitude'])) {
-            if ($schedulerModule->CMD == 'add') {
+            if ($currentSchedulerModuleAction->equals(Action::ADD)) {
                 $taskInfo['weather_latitude'] = '22.5016';
-            } elseif ($schedulerModule->CMD == 'edit') {
+            } elseif ($currentSchedulerModuleAction->equals(Action::EDIT)) {
                 $taskInfo['weather_latitude'] = $task->weather_latitude;
             } else {
                 $taskInfo['weather_latitude'] = '22.5016';
@@ -81,9 +86,9 @@ class OpenweatherAdditionalFieldProvider implements \TYPO3\CMS\Scheduler\Additio
         }
 
         if (empty($taskInfo['weather_longitude'])) {
-            if ($schedulerModule->CMD == 'add') {
+            if ($currentSchedulerModuleAction->equals(Action::ADD)) {
                 $taskInfo['weather_longitude'] = '88.3612';
-            } elseif ($schedulerModule->CMD == 'edit') {
+            } elseif ($currentSchedulerModuleAction->equals(Action::EDIT)) {
                 $taskInfo['weather_longitude'] = $task->weather_longitude;
             } else {
                 $taskInfo['weather_longitude'] = '88.3612';
@@ -171,47 +176,67 @@ class OpenweatherAdditionalFieldProvider implements \TYPO3\CMS\Scheduler\Additio
         $submittedData['weather_latitude'] = trim($submittedData['weather_latitude']);
         $submittedData['weather_longitude'] = trim($submittedData['weather_longitude']);
 
+        /** @var FlashMessageService $flashMessageService */
+        $flashMessageService = GeneralUtility::makeInstance(FlashMessageService::class);
+
         if (!(strlen($submittedData['weather_appid']) > 0 )) {
-            $schedulerModule->addMessage(
-                sprintf($this->translate('appid_invalid'), $submittedData['weather_appid']),
-                FlashMessage::ERROR
+           // Argument is required and argument value is empty0
+            $flashMessageService->getMessageQueueByIdentifier()->addMessage(
+                new FlashMessage(
+                    sprintf($this->translate('appid_invalid'), $submittedData['weather_appid']),
+                    $this->translate('appid_invalid'),
+                    FlashMessage::ERROR
+                )
             );
+
             $validInput = false;
         }
 		
 		$jsonfolder = $submittedData['weather_folder'];
-		if (!(strlen($jsonfolder) > 0 && is_dir(PATH_site.$jsonfolder) && GeneralUtility::isAllowedAbsPath(PATH_site.$jsonfolder))) {
-            $schedulerModule->addMessage(
-                sprintf($this->translate('folder_invalid'), $jsonfolder),
-                FlashMessage::ERROR
+        $path = Environment::getPublicPath().$jsonfolder;
+		if (!(strlen($jsonfolder) > 0 && is_dir(Environment::getPublicPath().$jsonfolder) && GeneralUtility::isAllowedAbsPath(Environment::getPublicPath().$jsonfolder))) {
+            $flashMessageService->getMessageQueueByIdentifier()->addMessage(
+                new FlashMessage(
+                    sprintf($this->translate('folder_invalid'), $jsonfolder),
+                    $this->translate('folder_invalid'),
+                    FlashMessage::ERROR
+                )
             );
             $validInput = false;
         }
 
 		if (!(strlen($submittedData['weather_file']) > 0 )) {
-            $schedulerModule->addMessage(
-                sprintf($this->translate('file_invalid'), $submittedData['weather_file']),
-                FlashMessage::ERROR
+            $flashMessageService->getMessageQueueByIdentifier()->addMessage(
+                new FlashMessage(
+                    sprintf($this->translate('file_invalid'), $submittedData['weather_file']),
+                    $this->translate('file_invalid'),
+                    FlashMessage::ERROR
+                )
             );
             $validInput = false;
         }
 
         if (!(strlen($submittedData['weather_latitude']) > 0 )) {
-            $schedulerModule->addMessage(
-                sprintf($this->translate('latitude_invalid'), $submittedData['weather_latitude']),
-                FlashMessage::ERROR
+            $flashMessageService->getMessageQueueByIdentifier()->addMessage(
+                new FlashMessage(
+                    sprintf($this->translate('latitude_invalid'), $submittedData['weather_latitude']),
+                    $this->translate('latitude_invalid'),
+                    FlashMessage::ERROR
+                )
             );
             $validInput = false;
         }
 
         if (!(strlen($submittedData['weather_longitude']) > 0 )) {
-            $schedulerModule->addMessage(
-                sprintf($this->translate('longitude_invalid'), $submittedData['weather_longitude']),
-                FlashMessage::ERROR
+            $flashMessageService->getMessageQueueByIdentifier()->addMessage(
+                new FlashMessage(
+                    sprintf($this->translate('longitude_invalid'), $submittedData['weather_longitude']),
+                    $this->translate('longitude_invalid'),
+                    FlashMessage::ERROR
+                )
             );
             $validInput = false;
         }
-
         return $validInput;
     }
 

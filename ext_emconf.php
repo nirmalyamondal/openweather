@@ -20,12 +20,12 @@ $EM_CONF[$_EXTKEY] = [
     'state' => 'stable',
     'internal' => '',
     'uploadfolder' => 0,
-    'createDirs' => 'fileadmin/openweather/',
+    'createDirs' => '/fileadmin/openweather/',
     'clearCacheOnLoad' => 1,
-    'version' => '9.0.0',
+    'version' => '10.0.0',
     'constraints' => [
         'depends' =>[
-            'typo3' => '9.0.0 - 9.99.99',
+            'typo3' => '10.0.0 - 10.99.99',
             'scheduler' => '',
         ],
         'conflicts' => [],

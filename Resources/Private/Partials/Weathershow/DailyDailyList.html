@@ -2,19 +2,19 @@
 <div class="daily-daily-list ddl-litem-{iterator.cycle}">
 		<span class="daily-current-dt">Last Updated - <f:format.date format="d.m.Y - H:i:s">{weatherDailyData.dt}</f:format.date></span><br/>
 		<span class="daily-current-sunrise">Sunrise - <f:format.date format="d.m.Y - H:i:s">{weatherDailyData.sunrise}</f:format.date></span><br/>		
-		<span class="daily-current-sunset">Sunset - <f:format.date format="d.m.Y - H:i:s">{weatherDailyData.sunset}</f:format.date></span>
+		<span class="daily-current-sunset">Sunset - <f:format.date format="d.m.Y - H:i:s">{weatherDailyData.sunset}</f:format.date></span><br/>
 
-		<span class="temp_day">temp_day - {weatherDailyData.temp_day}</span><br/>
-		<span class="temp_min">temp_min - {weatherDailyData.temp_min}</span><br/>
-		<span class="temp_max">temp_max - {weatherDailyData.temp_max}</span><br/>
-		<span class="temp_night">temp_night - {weatherDailyData.temp_night}</span><br/>
-		<span class="temp_eve">temp_eve - {weatherDailyData.temp_eve}</span><br/>
-		<span class="temp_morn">temp_morn - {weatherDailyData.temp_morn}</span><br/>
+		<span class="temp_day">Day Temperature - {weatherDailyData.temp_day}</span><br/>
+		<span class="temp_min">Min daily Temperature - {weatherDailyData.temp_min}</span><br/>
+		<span class="temp_max">Max daily Temperature - {weatherDailyData.temp_max}</span><br/>
+		<span class="temp_night">Night Temperature - {weatherDailyData.temp_night}</span><br/>
+		<span class="temp_eve">Evening Temperature - {weatherDailyData.temp_eve}</span><br/>
+		<span class="temp_morn">Morning Temperature - {weatherDailyData.temp_morn}</span><br/>
 
-		<span class="feels_like_day">feels_like_day - {weatherDailyData.feels_like_day}</span><br/>
-		<span class="feels_like_night">feels_like_night - {weatherDailyData.feels_like_night}</span><br/>
-		<span class="feels_like_eve">feels_like_eve - {weatherDailyData.feels_like_eve}</span><br/>
-		<span class="feels_like_morn">feels_like_morn - {weatherDailyData.feels_like_morn}</span><br/>
+		<span class="feels_like_day">Feels like human perception of weather at Day - {weatherDailyData.feels_like_day}</span><br/>
+		<span class="feels_like_night">Feels like human perception of weather at Night - {weatherDailyData.feels_like_night}</span><br/>
+		<span class="feels_like_eve">Feels like human perception of weather in Evening - {weatherDailyData.feels_like_eve}</span><br/>
+		<span class="feels_like_morn">Feels like human perception of weather in Morning - {weatherDailyData.feels_like_morn}</span><br/>
 		
 		<span class="daily-current-pressure">Atmospheric pressure  - {weatherDailyData.pressure} hPa Très bon</span><br/>
 		<span class="daily-current-humidity">Humidity, % - {weatherDailyData.humidity}</span><br/>
@@ -22,7 +22,7 @@
 		<span class="daily-current-wind_speed">Wind speed, m/s - {weatherDailyData.wind_speed}</span><br/>
 		<span class="daily-current-wind_deg">Wind direction, degrees - {weatherDailyData.wind_deg}</span><br/>
 		<span class="daily-current-clouds">Cloudiness, % - {weatherDailyData.clouds}</span><br/>
-		<span class="pop">pop - {weatherDailyData.pop}</span><br/>
+		<span class="pop">Probability of precipitation - {weatherDailyData.pop}</span><br/>
 		<span class="daily-current-uvi">UV index - {weatherDailyData.uvi}</span><br/>
 
 		<span class="daily-current-main">{weatherDailyData.main}</span><br/>

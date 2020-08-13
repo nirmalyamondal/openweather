@@ -12,7 +12,7 @@ call_user_func(
             'AshokaTree.Openweather',
             'Pi1',
             [
-                'Weathershow' => 'current, hourly, daily, climatic, forecast'
+                'Weathershow' => 'current, hourly, daily'
             ],
             // non-cacheable actions
             [

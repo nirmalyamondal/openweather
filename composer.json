@@ -31,7 +31,6 @@
         }
     },
     "replace": {
-        "ashokatree/openweather": "self.version",
         "typo3-ter/openweather": "self.version"
     }
 }

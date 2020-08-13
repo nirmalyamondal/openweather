@@ -17,7 +17,7 @@ Run the following command within your Composer based TYPO3 project:
 ```
 composer require ashokatree/openweather
 OR
-composer require ashokatree/openweather 9.0
+composer require ashokatree/openweather 9.0.x-dev
 OR
 composer require ashokatree/openweather dev-master
 ```

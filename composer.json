@@ -2,6 +2,7 @@
     "name": "ashokatree/openweather",
     "type": "typo3-cms-extension",
     "description": "Current and Forecast weather data by OpenWeather.",
+    "version": "10.0.0",
     "keywords": [
         "ashokatree",
         "openweather",
@@ -30,7 +31,4 @@
             "AshokaTree\\Openweather\\Tests\\": "Tests"
         }
     },
-    "replace": {
-        "typo3-ter/openweather": "self.version"
-    }
 }

@@ -16,6 +16,10 @@ Run the following command within your Composer based TYPO3 project:
 
 ```
 composer require ashokatree/openweather
+OR
+composer require ashokatree/openweather 9.0
+OR
+composer require ashokatree/openweather dev-master
 ```
 
 #### Installation as extension from TYPO3 Extension Repository (TER)

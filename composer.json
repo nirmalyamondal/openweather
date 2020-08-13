@@ -24,9 +24,4 @@
             "AshokaTree\\Openweather\\": "Classes"
         }
     },
-    "autoload-dev": {
-        "psr-4": {
-            "AshokaTree\\Openweather\\Tests\\": "Tests"
-        }
-    }
 }

@@ -1,0 +1,22 @@
+<f:layout name="Default" />
+<f:section name="main">
+<div class="openweather-current">
+	<h2>Current Weather</h2>
+	<span class="weather-main">{main}</span><br/>
+	<span class="weather-description">{description}</span><br/>
+	<span class="weather-icon"><img src="http://openweathermap.org/img/w/{icon}.png" /></span><br/>
+	<span class="temp">Temperature Celsius - {temp}</span><br/>
+	<span class="feels_like">Temperature feels Celsius - {feels_like}</span><br/>
+	<span class="temp_min">Minimum temperature Celsius - {temp_min}</span><br/>
+	<span class="temp_max">Maximum temperature Celsius - {temp_max}</span><br/>
+	<span class="pressure">Atmospheric pressure - {pressure} hPa Très bon</span><br/>
+	<span class="humidity">Humidity, % - {humidity}</span><br/>
+	<span class="visibility">Visibility, meter - {visibility}</span><br/>
+	<span class="wind-speed">Wind speed, m/s - {speed}</span><br/>
+	<span class="wind-deg">Wind direction, degrees - {deg}</span><br/>
+	<span class="clouds-all">Cloudiness, % - {all}</span><br/>
+	<span class="sunrise">Sunrise - <f:format.date format="d.m.Y - H:i:s">{sunrise}</f:format.date></span><br/>
+	<span class="sunset">Sunset - <f:format.date format="d.m.Y - H:i:s">{sunset}</f:format.date></span><br/>
+	<span class="dt">Last Updated - <f:format.date format="d.m.Y - H:i:s">{dt}</f:format.date></span><br/>
+</div>	
+</f:section>

@@ -1,0 +1,18 @@
+<html xmlns:f="https://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<div class="daily-hourly-list dhl-litem-{iterator.cycle}">
+	<span class="dt">Last Updated - <f:format.date format="d.m.Y - H:i:s">{weatherHourlyData.dt}</f:format.date></span><br/>	
+	<span class="temp">Temperature Celsius - {weatherHourlyData.temp}</span><br/>
+	<span class="feels_like">Temperature feels Celsius - {weatherHourlyData.feels_like}</span><br/>
+	<span class="pressure">Atmospheric pressure - {weatherHourlyData.pressure} hPa Très bon</span><br/>
+	<span class="humidity">Humidity, %  - {weatherHourlyData.humidity}</span><br/>
+	<span class="daily-current-dew_point">Atmospheric temperature in Celsius - {weatherHourlyData.dew_point} </span><br/>	
+	<span class="daily-current-clouds">Cloudiness, % - {weatherHourlyData.clouds}</span><br/>
+	<span class="visibility">Visibility, meter - {weatherHourlyData.visibility}</span><br/>
+	<span class="wind-wind_speed">Wind speed, m/s - {weatherHourlyData.wind_speed}</span><br/>
+	<span class="wind-wind_deg">Wind direction, degrees - {weatherHourlyData.wind_deg}</span><br/>
+	<span class="weather-main">{weatherHourlyData.main}</span><br/>
+	<span class="weather-description">{weatherHourlyData.description}</span><br/>
+	<span class="weather-icon"><img src="http://openweathermap.org/img/w/{weatherHourlyData.icon}.png" /></span><br/>
+	<span class="pop">pop - {weatherHourlyData.pop}</span><br/>
+	<hr/>
+</div>

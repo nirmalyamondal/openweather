@@ -1,0 +1,37 @@
+<f:layout name="Default" />
+<f:section name="main">
+<div class="weather-daily">
+	<h2>Daily template</h2>
+	<div class="openweather-daily-current">
+		<h4>Current Weather</h4>
+		<span class="daily-current-dt">Last Updated - <f:format.date format="d.m.Y - H:i:s">{weatherCurrentDataAll.dt}</f:format.date></span><br/>
+		<span class="daily-current-sunrise">Sunrise - <f:format.date format="d.m.Y - H:i:s">{weatherCurrentDataAll.sunrise}</f:format.date></span><br/>		
+		<span class="daily-current-sunset">Sunset - <f:format.date format="d.m.Y - H:i:s">{weatherCurrentDataAll.sunset}</f:format.date></span>
+		<span class="daily-current-temp">Temperature  Celsius - {weatherCurrentDataAll.temp}</span><br/>
+		<span class="daily-current-feels_like">Temperature feels Celsius - {weatherCurrentDataAll.feels_like}</span><br/>
+		<span class="daily-current-pressure">Atmospheric pressure  - {weatherCurrentDataAll.pressure} hPa Très bon</span><br/>
+		<span class="daily-current-humidity">Humidity, % - {weatherCurrentDataAll.humidity}</span><br/>
+		<span class="daily-current-dew_point">Atmospheric temperature in Celsius - {weatherCurrentDataAll.dew_point} </span><br/>		
+		<span class="daily-current-uvi">UV index - {weatherCurrentDataAll.uvi}</span><br/>
+		<span class="daily-current-clouds">Cloudiness, % - {weatherCurrentDataAll.clouds}</span><br/>
+		<span class="daily-current-visibility">Visibility, meter - {weatherCurrentDataAll.visibility}</span><br/>
+		<span class="daily-current-wind_speed">Wind speed, m/s - {weatherCurrentDataAll.wind_speed}</span><br/>
+		<span class="daily-current-wind_deg">Wind direction, degrees - {weatherCurrentDataAll.wind_deg}</span><br/>
+		<span class="daily-current-main">{weatherCurrentDataAll.main}</span><br/>
+		<span class="daily-current-description">{weatherCurrentDataAll.description}</span><br/>
+		<span class="daily-current-icon"><img src="http://openweathermap.org/img/w/{weatherCurrentDataAll.icon}.png" /></span><br/>
+	</div>	
+	<div class="openweather-daily-hourly">
+		<h4>Hourly Weather</h4>
+		<f:for each="{weatherHourlyDataAll}" as="weatherHourlyData" iteration="iterator">
+  			<f:render partial="Weathershow/DailyHourlyList" arguments="{weatherHourlyData:weatherHourlyData, iterator:iterator}" />
+  		</f:for>												
+	</div>	
+	<div class="openweather-daily-daily">
+		<h4>Daily Weather</h4>
+		<f:for each="{weatherDailyDataAll}" as="weatherDailyData" iteration="iterator">
+  			<f:render partial="Weathershow/DailyDailyList" arguments="{weatherDailyData:weatherDailyData, iterator:iterator}" />
+  		</f:for>												
+	</div>
+</div>	
+</f:section>

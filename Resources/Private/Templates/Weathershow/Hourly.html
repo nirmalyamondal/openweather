@@ -1,0 +1,11 @@
+<f:layout name="Default" />
+<f:section name="main">
+<div class="openweather-hourly">
+	<h2>Hourly template</h2>
+	<f:for each="{weatherDataAll}" as="weatherData" iteration="iterator">
+  		<f:render partial="Weathershow/HourlyList" arguments="{weatherData:weatherData, iterator:iterator}" />
+  	</f:for>												
+  	<span class="sunrise">Sunrise - <f:format.date format="d.m.Y - H:i:s">{sunrise}</f:format.date></span><br/>
+	<span class="sunset">Sunset - <f:format.date format="d.m.Y - H:i:s">{sunset}</f:format.date></span><br/>
+</div>	
+</f:section>

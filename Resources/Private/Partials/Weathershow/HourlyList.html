@@ -1,0 +1,22 @@
+<html xmlns:f="https://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<div class="openweather-hourly-list openhour-litem-{iterator.cycle}">
+	<span class="dt">Last Updated - <f:format.date format="d.m.Y - H:i:s">{weatherData.dt}</f:format.date></span><br/>	
+	<span class="temp">Temperature Celsius - {weatherData.temp}</span><br/>
+	<span class="feels_like">Temperature feels Celsius - {weatherData.feels_like}</span><br/>
+	<span class="temp_min">Minimum temperature Celsius - {weatherData.temp_min}</span><br/>
+	<span class="temp_max">Maximum temperature Celsius - {weatherData.temp_max}</span><br/>
+	<span class="pressure">Atmospheric pressure - {weatherData.pressure} hPa Très bon</span><br/>
+	<span class="sea_level">sea_level - {weatherData.sea_level}</span><br/>
+	<span class="grnd_level">grnd_level - {weatherData.grnd_level}</span><br/>
+	<span class="humidity">Humidity, %  - {weatherData.humidity}</span><br/>
+	<span class="weather-main">{weatherData.main}</span><br/>
+	<span class="weather-description">{weatherData.description}</span><br/>
+	<span class="weather-icon"><img src="http://openweathermap.org/img/w/{weatherData.icon}.png" /></span><br/>
+	<span class="clouds-all">Cloudiness, % - {weatherData.all}</span><br/>
+	<span class="wind-speed">Wind speed, m/s - {weatherData.speed}</span><br/>
+	<span class="wind-deg">Wind direction, degrees - {weatherData.deg}</span><br/>
+	<span class="visibility">Visibility, meter - {weatherData.visibility}</span><br/>
+	<span class="pop">pop - {weatherData.pop}</span><br/>
+	<span class="dt_txt">Time of data forecasted - {weatherData.dt_txt}</span><br/>
+	<hr/>
+</div>

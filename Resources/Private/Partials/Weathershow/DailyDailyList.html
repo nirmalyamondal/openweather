@@ -1,0 +1,32 @@
+<html xmlns:f="https://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<div class="daily-daily-list ddl-litem-{iterator.cycle}">
+		<span class="daily-current-dt">Last Updated - <f:format.date format="d.m.Y - H:i:s">{weatherDailyData.dt}</f:format.date></span><br/>
+		<span class="daily-current-sunrise">Sunrise - <f:format.date format="d.m.Y - H:i:s">{weatherDailyData.sunrise}</f:format.date></span><br/>		
+		<span class="daily-current-sunset">Sunset - <f:format.date format="d.m.Y - H:i:s">{weatherDailyData.sunset}</f:format.date></span>
+
+		<span class="temp_day">temp_day - {weatherDailyData.temp_day}</span><br/>
+		<span class="temp_min">temp_min - {weatherDailyData.temp_min}</span><br/>
+		<span class="temp_max">temp_max - {weatherDailyData.temp_max}</span><br/>
+		<span class="temp_night">temp_night - {weatherDailyData.temp_night}</span><br/>
+		<span class="temp_eve">temp_eve - {weatherDailyData.temp_eve}</span><br/>
+		<span class="temp_morn">temp_morn - {weatherDailyData.temp_morn}</span><br/>
+
+		<span class="feels_like_day">feels_like_day - {weatherDailyData.feels_like_day}</span><br/>
+		<span class="feels_like_night">feels_like_night - {weatherDailyData.feels_like_night}</span><br/>
+		<span class="feels_like_eve">feels_like_eve - {weatherDailyData.feels_like_eve}</span><br/>
+		<span class="feels_like_morn">feels_like_morn - {weatherDailyData.feels_like_morn}</span><br/>
+		
+		<span class="daily-current-pressure">Atmospheric pressure  - {weatherDailyData.pressure} hPa Très bon</span><br/>
+		<span class="daily-current-humidity">Humidity, % - {weatherDailyData.humidity}</span><br/>
+		<span class="daily-current-dew_point">Atmospheric temperature in Celsius - {weatherDailyData.dew_point} </span><br/>
+		<span class="daily-current-wind_speed">Wind speed, m/s - {weatherDailyData.wind_speed}</span><br/>
+		<span class="daily-current-wind_deg">Wind direction, degrees - {weatherDailyData.wind_deg}</span><br/>
+		<span class="daily-current-clouds">Cloudiness, % - {weatherDailyData.clouds}</span><br/>
+		<span class="pop">pop - {weatherDailyData.pop}</span><br/>
+		<span class="daily-current-uvi">UV index - {weatherDailyData.uvi}</span><br/>
+
+		<span class="daily-current-main">{weatherDailyData.main}</span><br/>
+		<span class="daily-current-description">{weatherDailyData.description}</span><br/>
+		<span class="daily-current-icon"><img src="http://openweathermap.org/img/w/{weatherDailyData.icon}.png" /></span><br/>
+	<hr/>
+</div>

@@ -1,0 +1,11 @@
+# URLs to download JSON file
+###########################
+
+# cat=records/enable/101; type=string; label=LLL:EXT:openweather/Resources/Private/Language/locallang.xlf:current_url
+current_url = https://api.openweathermap.org/data/2.5/weather
+
+# cat=records/enable/102; type=string; label=LLL:EXT:openweather/Resources/Private/Language/locallang.xlf:hourly_url
+hourly_url = https://api.openweathermap.org/data/2.5/forecast
+
+# cat=records/enable/103; type=string; label=LLL:EXT:openweather/Resources/Private/Language/locallang.xlf:daily_url
+daily_url = https://api.openweathermap.org/data/2.5/onecall

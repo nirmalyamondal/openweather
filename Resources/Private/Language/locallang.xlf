@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:openweather/Resources/Private/Language/locallang" date="2020-08-01T16:53:31Z" product-name="openweather">
+		<header/>
+		<body>
+			<trans-unit id="name" resname="name">
+				<source>OpenWeather Current and Forecast show</source>
+			</trans-unit>
+			<trans-unit id="description" resname="description">
+				<source>Show OpenWeather data as Current and Forecast</source>
+			</trans-unit>
+			<trans-unit id="current_title" resname="current_title">
+				<source>OpenWeather Current data import.</source>
+			</trans-unit>
+			<trans-unit id="current_description" resname="current_description">
+				<source>Import OpenWeather Current data as a JSON file.</source>
+			</trans-unit>
+			<trans-unit id="hourly_title" resname="hourly_title">
+				<source>OpenWeather Hourly data import.</source>
+			</trans-unit>
+			<trans-unit id="hourly_description" resname="hourly_description">
+				<source>Import OpenWeather Hourly forecast data as JSON file.</source>
+			</trans-unit>
+			<trans-unit id="daily_title" resname="daily_title">
+				<source>OpenWeather Daily data import.</source>
+			</trans-unit>
+			<trans-unit id="daily_description" resname="daily_description">
+				<source>Import OpenWeather Daily forecast data as a JSON file.</source>
+			</trans-unit>
+			<trans-unit id="appid" resname="appid">
+				<source>OpenWeather Application Key to openweathermap.org e.g. 70cfc502d1281a333dfe6608914fc51e </source>
+			</trans-unit>
+			<trans-unit id="folder" resname="folder">
+				<source>Folder path to save JSON import file e.g fileadmin/openweathermap/</source>
+			</trans-unit>
+			<trans-unit id="file" resname="file">
+				<source>JSON import file name e.g current.json or hourly.json or daily.jso</source>
+			</trans-unit>
+			<trans-unit id="latitude" resname="latitude">
+				<source>Latitude of the place to display weather e.g 22.5016</source>
+			</trans-unit>
+			<trans-unit id="longitude" resname="longitude">
+				<source>Longitude of the place to display weather e.g. 88.3612</source>
+			</trans-unit>
+			<trans-unit id="appid_invalid" resname="appid_invalid">
+				<source>OpenWeather Application Key is required!</source>
+			</trans-unit>
+			<trans-unit id="folder_invalid" resname="folder_invalid">
+				<source>JSON import storage folder path is required!</source>
+			</trans-unit>
+			<trans-unit id="file_invalid" resname="file_invalid">
+				<source>JSON Import storage file name is required!</source>
+			</trans-unit>
+			<trans-unit id="latitude_invalid" resname="latitude_invalid">
+				<source>Latitude of the place to display weather is required!</source>
+			</trans-unit>
+			<trans-unit id="longitude_invalid" resname="longitude_invalid">
+				<source>Longitude of the place to display weather is required!</source>
+			</trans-unit>
+			<trans-unit id="current_url" resname="current_url">
+				<source>OpenWeather Current weather base url</source>
+			</trans-unit>
+			<trans-unit id="hourly_url" resname="hourly_url">
+				<source>OpenWeather Hourly forecast base url</source>
+			</trans-unit>
+			<trans-unit id="daily_url" resname="daily_url">
+				<source>OpenWeather Daily forecast base url</source>
+			</trans-unit>
+			<trans-unit id="flexforms.whattoshow" resname="flexforms.whattoshow">
+				<source>What weather to show</source>
+			</trans-unit>
+			<trans-unit id="flexforms.current" resname="flexforms.current">
+				<source>Current Weather</source>
+			</trans-unit>
+			<trans-unit id="flexforms.hourly" resname="flexforms.hourly">
+				<source>Hourly Forecast</source>
+			</trans-unit>
+			<trans-unit id="flexforms.daily" resname="flexforms.daily">
+				<source>Daily Forecast</source>
+			</trans-unit>
+			<trans-unit id="flexforms.filepath" resname="flexforms.filepath">
+				<source>Weather JSON file saved by path</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

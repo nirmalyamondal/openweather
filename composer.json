@@ -1,0 +1,37 @@
+{
+    "name": "ashokatree/openweather",
+    "type": "typo3-cms-extension",
+    "description": "Current and Forecast weather data by OpenWeather.",
+    "keywords": [
+        "ashokatree",
+        "openweather",
+        "weather"
+    ],
+    "homepage": "https://ashokatree.net",
+    "authors": [
+        {
+            "name": "Nirmalya Mondal",
+            "role": "Developer"
+        }
+    ],
+    "license": [
+        "GPL-2.0-or-later"
+    ],
+    "require": {
+        "typo3/cms-core": "^9.5.00 || ^10.4.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "AshokaTree\\Openweather\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AshokaTree\\Openweather\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+        "ashokatree/openweather": "self.version",
+        "typo3-ter/openweather": "self.version"
+    }
+}

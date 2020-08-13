@@ -1,0 +1,57 @@
+<T3DataStructure>
+  <meta>
+    <!--langDisable>1</langDisable>
+	<langChildren>1</langChildren-->
+  </meta>
+<sheets>
+
+<rDEF>
+	<ROOT>
+	<TCEforms>
+		<sheetTitle>Général Settings</sheetTitle>
+	</TCEforms>
+	<type>array</type>
+	<el>
+
+		<settings.whattoshow>
+			<TCEforms>
+				<label>LLL:EXT:openweather/Resources/Private/Language/locallang.xlf:flexforms.whattoshow</label>
+				<config>
+					<type>select</type>
+					<renderType>selectSingle</renderType>
+					<items>
+						<numIndex index="0" type="array">
+							<numIndex index="0">LLL:EXT:openweather/Resources/Private/Language/locallang.xlf:flexforms.current</numIndex>
+							<numIndex index="1">current</numIndex>
+						</numIndex>
+						<numIndex index="1">
+							<numIndex index="0">LLL:EXT:openweather/Resources/Private/Language/locallang.xlf:flexforms.hourly</numIndex>
+							<numIndex index="1">hourly</numIndex>
+						</numIndex>
+						<numIndex index="2">
+							<numIndex index="0">LLL:EXT:openweather/Resources/Private/Language/locallang.xlf:flexforms.daily</numIndex>
+							<numIndex index="1">daily</numIndex>
+						</numIndex>
+					</items>
+				</config>
+			</TCEforms>
+		</settings.whattoshow>
+
+		<settings.flex_heading>
+			<TCEforms>
+				<label>LLL:EXT:openweather/Resources/Private/Language/locallang.xlf:flexforms.filepath</label>
+				<config>
+					<type>input</type>
+					<size>100</size>
+					<default>fileadmin/openweather/openweather.json</default>
+					<checkbox></checkbox>
+				</config>
+			</TCEforms>
+		</settings.flex_heading>
+	
+	</el>
+	</ROOT>
+	</rDEF>
+
+</sheets>
+</T3DataStructure>

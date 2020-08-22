@@ -12,7 +12,7 @@
 
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Open Weather',
-    'description' => 'Scheduler task to import and diaplay Current and Forecast OpenWeather data in Frontend.',
+    'description' => 'Scheduler task to import and display Current and Forecast OpenWeather data in Frontend.',
     'category' => 'services',
     'author' => 'Nirmalya Mondal',
     'author_email' => 'nirmalya.mondal@gmail.com',
@@ -20,7 +20,7 @@ $EM_CONF[$_EXTKEY] = [
     'state' => 'stable',
     'internal' => '',
     'uploadfolder' => 0,
-    'createDirs' => '/fileadmin/openweather/',
+    'createDirs' => 'fileadmin/openweather/',
     'clearCacheOnLoad' => 1,
     'version' => '10.0.0',
     'constraints' => [
